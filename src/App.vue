@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <ResponsiveNavbar />
+    <Table />
   </div>
 </template>
 
 <script>
 import ResponsiveNavbar from '@/components/ResponsiveNavbar'
+import Table from '@/components/Table'
 
 export default {
   name: 'App',
   components: {
-    ResponsiveNavbar
+    ResponsiveNavbar, Table
   }
 }
 </script>

@@ -34,7 +34,6 @@ export default {
 }
 
 #burger {
-    display: none;
     margin-left: 15px;
 }
 

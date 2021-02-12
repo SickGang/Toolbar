@@ -93,6 +93,78 @@ import BurgerBtn from '@/components/BurgerBtn'
                 {
                     text: "Reports",
                     icon: "ion-ios-alert"
+                },
+                {
+                    text: "Phone Reports",
+                    icon: "ion-ios-browsers",
+                    children: [
+                        {
+                            text: "По моделям"
+                        },
+                        {
+                            text: "По кластерам"
+                        },
+                        {
+                            text: "По не используемым"
+                        },
+                        {
+                            text: "По Agent Licenses"
+                        }
+                    ]
+                },
+                {
+                    text: "Tools",
+                    icon: "ion-ios-hammer",
+                    children: [
+                        {
+                            text: "Поиск незарегистрированных телефонов"
+                        },
+                        {
+                            text: "CUCM маршрутизация"
+                        },
+                        {
+                            text: "Testing CORS Requests"
+                        }
+                    ]
+                },
+                {
+                    text: "Справочники",
+                    icon: "ion-ios-information-circle-outline",
+                    children: [
+                        {
+                            text: "Рег. центры (mapping)"
+                        },
+                        {
+                            text: "Регионы"
+                        },
+                        {
+                            text: "Города"
+                        },
+                        {
+                            text: "Статусы офисов"
+                        },
+                        {
+                            text: "Оборудование"
+                        },
+                        {
+                            text: "Типы портов"
+                        },
+                        {
+                            text: "VRF"
+                        },
+                        {
+                            text: "Networks(Table)"
+                        },
+                        {
+                            text: "Networks(Tree)"
+                        },
+                        {
+                            text: "Логи HardWare"
+                        },
+                        {
+                            text: "Логи Phones"
+                        }
+                    ]
                 }
             ]
         }),
@@ -124,10 +196,17 @@ ul {
     padding-left: 0px;
     display: flex;
     align-items: center;
-    height: 100%;
     flex-basis: 100%;
     list-style: none;
     margin: 0px;
+    position: absolute;
+    flex-direction: column;
+    width: 250px;
+    height: 100%;
+    top: 70px;
+    background-color: #f7f9f9;
+    left: -190px;
+    transition: 300ms ease all;
 }
 li {
     display: flex;
@@ -139,7 +218,7 @@ li {
     font-size: 18px;
     font-weight: 500;
     position: relative;
-    padding: 0px 5px;
+    padding: 0px 20px;
 }
 li.active > .children-links{
     opacity: 1;
@@ -167,6 +246,9 @@ li:not(:first-child) {
     opacity: 0;
     transition: all 0.4s;
     visibility: hidden;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
 }
 li:hover {
     background: #1212;
@@ -182,44 +264,31 @@ li.active .ion-ios-arrow-down::before {
     top: 0px;
     left: 0px;
 }
-@media screen and (max-width: 1000px) {
-    nav ul {
-        position: absolute;
-        flex-direction: column;
-        width: 250px;
-        height: 100%;
-        top: 70px;
-        background-color: #f7f9f9;
-        padding: 0px 20px;
-        left: -235px;
-        transition: 300ms ease all;
-    }
-    ul.active {
-        left: 0px;
-    }
-    li {
-        flex: none;
-        height: 50px !important;
-        margin-left: 0px !important;
-        flex-direction: row-reverse;
-        width: 100%;
-        justify-content: space-between;
-    }
-    .logo {
-        width: 100%;
-        text-align: center;
-    }
-    #burger {
-        display: block;
-        margin-left: 15px;
-    }
-    .children-links {
-        background-color: #f7f9f9;
-        z-index: 99;
-    }
-    ul:not(.active) li.active .children-links{
-        opacity: 0;
-        visibility: hidden;
-    }
+ul.active {
+    left: 0px;
+}
+li {
+    flex: none;
+    height: 50px !important;
+    margin-left: 0px !important;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+}
+.logo {
+    width: 100%;
+    text-align: center;
+}
+#burger {
+    display: block;
+    margin-left: 15px;
+}
+.children-links {
+    background-color: #f7f9f9;
+    z-index: 99;
+}
+ul:not(.active) li.active .children-links{
+    opacity: 0;
+    visibility: hidden;
 }
 </style>
